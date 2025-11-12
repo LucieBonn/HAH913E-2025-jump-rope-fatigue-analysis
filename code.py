@@ -93,4 +93,43 @@ plt.show()
 print(f"\n✅ Graphique sauvegardé dans : {output_path}")
 
 
+## ajout code ENMO
+def compute_enmo(df):
+    norm = np.sqrt(df['x']**2 + df['y']**2 + df['z']**2)
+    df['enmo'] = norm - 1  # keep negative values
+    return df
+df = compute_enmo(df)
+df.head()
+
+def aggregate_enmo_gmin(df, epoch_length):
+    df['epoch'] = (df['t'] // epoch_length).astype(int)
+    aggregated = df.groupby('epoch')['enmo'].sum().reset_index()
+    aggregated['enmo_gmin'] = aggregated['enmo'] * (epoch_length / 60)  # correct factor
+    aggregated['time_min'] = aggregated['epoch'] * epoch_length / 60
+    return aggregated
+
+aggregated_10s = aggregate_enmo_gmin(df, epoch_length=10)   # visualisation epoch 10s 
+
+df['time_min'] = df['t'] / 60  # convert seconds to minutes
+fig, axs = plt.subplots(2, 1, figsize=(12, 8))
+
+# Bar plot: ENMO aggregated
+axs[0].bar(aggregated_10s['time_min'], aggregated_10s['enmo_gmin'], width=0.15, color='grey')
+axs[0].set_title('ENMO integrated over 10.0 s intervals')
+axs[0].set_ylabel('Integrated ENMO (g·min)')
+axs[0].set_xlabel('Time (minutes)')
+axs[0].axhline(0, color='black', linewidth=0.8)
+
+# Line plot: raw ENMO
+axs[1].plot(df['time_min'], df['enmo'], color='steelblue')
+axs[1].set_title('Raw ENMO over Time')
+axs[1].set_xlabel('Time (minutes)')
+axs[1].set_ylabel('ENMO (g)')
+axs[1].axhline(0, color='black', linewidth=0.8)
+
+plt.tight_layout()
+plt.savefig('enmo_epoch_10s.png')
+plt.show()
+
+
 
