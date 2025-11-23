@@ -1,1 +1,1 @@
-Ce dossier contient les fichiers .csv obtenus à partir des mesures réalisées avec l’accéléromètre.
+This README file contains the CSV files obtained from the measurements carried out with the accelerometer.
