@@ -130,6 +130,3 @@
 # plt.tight_layout()
 # plt.savefig('enmo_epoch_10s.png')
 # plt.show()
-
-
-
