@@ -148,9 +148,11 @@ The first hypothesis was that acceleration intensity would progressively decreas
 
 To test this, analyses were conducted between and within series:
 * Inter-series analysis
+
 The acceleration signals were converted into ENMO (Euclidean Norm Minus One g), which isolates the dynamic component of movement by subtracting gravitational acceleration. For each of the three series, ENMO-based indicators (mean, standard deviation, RMS, and maximum value) were calculated to assess whether a global decline in movement intensity occurred as repetitions accumulated.
 
 * Intra-series analysis
+
 Within each series, the ENMO time series was divided into regular epochs. For each epoch, the mean ENMO and RMS were computed. A gradual decrease in these indicators from the beginning to the end of the series was interpreted as a sign of local muscular fatigue, potentially reflecting reduced jump height, lower impact forces at landing, or decreased movement regularity.
 
 ### Hypothesis 2: The sensor's position influences the detection of muscle fatigue.###
