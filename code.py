@@ -7,23 +7,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # =============================
-# Préparation du dossier résultats
-# =============================
-os.makedirs("resultats", exist_ok=True)
-
-# =============================
-# Définir les chemins des fichiers
+# Dossiers
 # =============================
 base_dir = Path(__file__).parent
-file_list = [
-    base_dir / "data" / "ankle_Series1_trial1.csv",
-    base_dir / "data" / "ankle_Series1_trial2.csv",
-    base_dir / "data" / "wrist_Series1_trial1.csv",
-    base_dir / "data" / "wrist_Series1_trial2.csv"
-]
+data_dir = base_dir / "data"
+os.makedirs(base_dir / "resultats", exist_ok=True)
 
 # =============================
-# Fonctions pour ENMO et MAD
+# Fonctions ENMO & MAD
 # =============================
 def calculate_enmo(x, y, z):
     enmo = np.sqrt(x**2 + y**2 + z**2) - 1
@@ -32,73 +23,103 @@ def calculate_enmo(x, y, z):
 
 def calculate_mad(x, y, z):
     magnitude = np.sqrt(x**2 + y**2 + z**2)
-    mad = np.mean(np.abs(magnitude - np.mean(magnitude)))
-    return mad
+    return np.mean(np.abs(magnitude - np.mean(magnitude)))
 
 # =============================
-# Lire et combiner les fichiers
+# Lecture CSV robuste
 # =============================
-dfs = []
-for f in file_list:
-    if not f.exists():
-        print(f"Le fichier {f} n'existe pas. Ignoré.")
-        continue
-    
-    # Lecture automatique du séparateur
+def read_accel_file(file_path):
+    print(f"\n Lecture fichier : {file_path.name}")
+
     try:
-        df = pd.read_csv(f, header=None, sep=None, engine='python', comment='#')
+        df = pd.read_csv(
+            file_path,
+            header=None,
+            sep=",",
+            names=["time", "X", "Y", "Z"]
+        )
     except Exception as e:
-        print(f"Erreur lecture {f.name} : {e}. Ignoré.")
+        print(f" Erreur de lecture : {e}")
+        return None
+
+    if df.shape[1] != 4:
+        print(f" Format inattendu : {file_path.name}")
+        return None
+
+    return df
+
+# =============================
+# Calcul ENMO & MAD
+# =============================
+def compute_metrics(df):
+    df["ENMO"] = np.maximum(
+        np.sqrt(df["X"]**2 + df["Y"]**2 + df["Z"]**2) - 1, 0
+    )
+    df["MAD"] = (df[["X", "Y", "Z"]] - df[["X", "Y", "Z"]].mean()).abs().mean(axis=1)
+    return df
+
+# =============================
+# Plot comparaison ankle/wrist
+# =============================
+def plot_comparison(df_ankle, df_wrist, title):
+    combined = pd.concat([
+        pd.DataFrame({"location": "ankle", "ENMO": df_ankle["ENMO"], "MAD": df_ankle["MAD"]}),
+        pd.DataFrame({"location": "wrist", "ENMO": df_wrist["ENMO"], "MAD": df_wrist["MAD"]})
+    ])
+
+    fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+
+    sns.boxplot(ax=axes[0], data=combined, x="location", y="ENMO")
+    axes[0].set_title(f"ENMO – {title}")
+
+    sns.boxplot(ax=axes[1], data=combined, x="location", y="MAD")
+    axes[1].set_title(f"MAD – {title}")
+
+    plt.suptitle(title, fontsize=16)
+    plt.tight_layout()
+
+    # Sauvegarde automatique
+    fig.savefig(base_dir / "resultats" / f"{title}.png", dpi=300)
+    plt.show()
+
+# =============================
+# Liste des fichiers à comparer
+# =============================
+comparisons = [
+    ("Series1_trial1", "ankle_Series1_trial1.csv", "wrist_Series1_trial1.csv"),
+    ("Series1_trial2", "ankle_Series1_trial2.csv", "wrist_Series1_trial2.csv"),
+    ("Series2_trial1", "ankle_Series2_trial1.csv", "wrist_Series2_trial1.csv"),
+    ("Series2_trial2", "ankle_Series2_trial2.csv", "wrist_Series2_trial2.csv"),
+    ("Series3_trial1", "ankle_Series3_trial1.csv", "wrist_Series3_trial1.csv"),
+    ("Series3_trial2", "ankle_Series3_trial2.csv", "wrist_Series3_trial2.csv"),
+]
+
+# =============================
+# Boucle principale
+# =============================
+print("\n==============================")
+print(" Début de génération des figures")
+print("==============================")
+
+for label, ankle_file, wrist_file in comparisons:
+
+    path_ankle = data_dir / ankle_file
+    path_wrist = data_dir / wrist_file
+
+    df_ankle = read_accel_file(path_ankle)
+    df_wrist = read_accel_file(path_wrist)
+
+    if df_ankle is None or df_wrist is None:
+        print(f" Données insuffisantes pour {label}.")
+        print("--------------------------------------------")
         continue
-    
-    # Supprimer lignes vides
-    df.dropna(how='all', inplace=True)
-    
-    # Vérifier le nombre de colonnes
-    if df.shape[1] < 4:
-        print(f"Le fichier {f.name} a moins de 4 colonnes. Ignoré.")
-        continue
-    if df.shape[1] > 4:
-        df = df.iloc[:, :4]  # garder seulement les 4 premières colonnes
-    
-    # Renommer les colonnes
-    df.columns = ["time", "x", "y", "z"]
-    
-    # Convertir x, y, z en float
-    df[["x","y","z"]] = df[["x","y","z"]].astype(float)
-    
-    # Ajouter localisation
-    df["location"] = "ankle" if "ankle" in f.name.lower() else "wrist"
-    
-    # Calculer ENMO et MAD
-    df["ENMO"] = calculate_enmo(df["x"].values, df["y"].values, df["z"].values)
-    df["MAD"] = calculate_mad(df["x"].values, df["y"].values, df["z"].values)
-    
-    dfs.append(df)
 
-# Combiner tous les fichiers
-if not dfs:
-    raise ValueError("Aucun fichier valide n'a été trouvé.")
-data = pd.concat(dfs, ignore_index=True)
+    df_ankle = compute_metrics(df_ankle)
+    df_wrist = compute_metrics(df_wrist)
 
-# =============================
-# Boxplot comparatif ENMO
-# =============================
-plt.figure(figsize=(8,5))
-sns.boxplot(x="location", y="ENMO", data=data)
-plt.title("Comparaison ENMO : Ankle vs Wrist")
-plt.ylabel("ENMO (g)")
-plt.savefig("resultats/comparaison_ENMO.png", dpi=300)
-plt.show()  # Affiche le graphique
+    plot_comparison(df_ankle, df_wrist, label)
 
-# =============================
-# Boxplot comparatif MAD
-# =============================
-plt.figure(figsize=(8,5))
-sns.boxplot(x="location", y="MAD", data=data)
-plt.title("Comparaison MAD : Ankle vs Wrist")
-plt.ylabel("MAD (g)")
-plt.savefig("resultats/comparaison_MAD.png", dpi=300)
-plt.show()  # Affiche le graphique
+    print(f" Figure générée pour {label}")
+    print("--------------------------------------------")
 
-print("Les graphiques ont été générés, sauvegardés et affichés.")
+print("\n Toutes les figures valides ont été générées.")
