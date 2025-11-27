@@ -155,10 +155,11 @@ The acceleration signals were converted into ENMO (Euclidean Norm Minus One g), 
 
 Within each series, the ENMO time series was divided into regular epochs. For each epoch, the mean ENMO and RMS were computed. A gradual decrease in these indicators from the beginning to the end of the series was interpreted as a sign of local muscular fatigue, potentially reflecting reduced jump height, lower impact forces at landing, or decreased movement regularity.
 
-### Hypothesis 2: The sensor's position influences the detection of muscle fatigue.###
+### Hypothesis 2: The sensor's position influences the detection of muscle fatigue.
 
 The second hypothesis concerned the influence of sensor placement on the detection of muscular fatigue.
 
 For each series and each sensor location (wrist and ankle), the same indicators (mean, RMS, and maximum value of total acceleration or ENMO) were computed. The signals recorded at the wrist and ankle were then compared to determine which location provided the most relevant information for detecting decreases in movement intensity associated with fatigue.
 
 All measurements were collected from a single participant, which helped reduce inter-individual variability related to strength, movement amplitude, and endurance level. This approach enabled a comparative evaluation of how sensitive each sensor location is to fatigue-related changes in movement intensity.
+
