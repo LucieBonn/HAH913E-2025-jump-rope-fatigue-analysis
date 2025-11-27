@@ -361,4 +361,3 @@ for label, ankle_file, wrist_file in comparisons:
     print("--------------------------------------------")
 
 print("\n Toutes les figures valides ont été générées.")
-main
