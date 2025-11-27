@@ -1,4 +1,3 @@
-bomane-travail
 This folder contains the CSV files obtained from the accelerometer measurements.
 The results were produced from two independent repetitions.
 Each repetition includes recordings from both the ankle and the wrist, for which three successive series were performed.
