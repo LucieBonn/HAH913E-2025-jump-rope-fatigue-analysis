@@ -97,6 +97,8 @@ During all trials, two Axivity AX3 accelerometers were used simultaneously: one 
 
 Before each measurement, the Axivity AX3 sensor was configured using the OmGui software (Axivity Ltd.). This software allows sensors to be set up, initialized, and synchronized prior to data recording.
 
+Here is the website link:[Texte du lien](https://axivity.com/userguides/omgui/)
+
 The configuration steps were as follows:
 1. Sensor connection: The sensor is connected to the computer via a micro-USB type B cable. It automatically appears in the Device Browser Pane of the OmGui software.
 2. Clearing previous data: The Clear button is used to delete any prior recordings stored in the sensor’s internal memory, ensuring a blank data file for each test.
@@ -106,10 +108,6 @@ The configuration steps were as follows:
     * Start mode: Start at programmed time
     * Synchronization: the sensor’s internal clock is automatically adjusted to the computer’s time at validation.
 4. Start time programming: The sensor was programmed to automatically begin recording at the predefined time set in the software (interval start time). Once disconnected from the computer, the device remained in standby until the scheduled time was reached, at which point recording started autonomously.
-
-![Figure 1](Figure1_RecordingSettings_window.jpg)
-
-**Figure 1 – “Recording Settings” window of the OmGui software**
 
 ---
 
@@ -122,12 +120,6 @@ A 5-minute rest period was provided between series. This pause allowed the exper
 At the end of each series, the accelerometers were reconnected to the computer to retrieve the data. The recording was stopped using the Stop command, then the Download function was used to transfer the file in .CWA format to the OmGui Working Folder.
 
 The recordings were initially saved in the proprietary .CWA binary format, which is not directly compatible with standard data-analysis tools. To process the data in Python, the files were converted into .CSV format using the Export raw data to CSV function in OmGui.
-
-Figure 2 illustrates the configuration window used for exporting the raw data.
-
-![Figure 2](Figure2_RawDataExportWindow.jpg)
-
-**Figure 2 – Raw data export window in OmGui**
 
 The following export parameters were selected:
 - Accelerometer units: Gravity (g), i.e. acceleration expressed in multiples of g (1 g = 9.81 m·s⁻²)
@@ -142,7 +134,7 @@ The resulting CSV files contained four columns: timestamp, X-axis acceleration, 
 
 Two main hypotheses guided the analysis of the acceleration signals recorded during the jump-rope exercise.
 
-### Hypothesis 1: The intensity of the acceleration signal decreases across series, reflecting the progressive onset of muscle fatigue ###
+### Hypothesis 1: The intensity of the acceleration signal decreases across series, reflecting the progressive onset of muscle fatigue
 
 The first hypothesis was that acceleration intensity would progressively decrease as muscular fatigue developed.
 
@@ -155,7 +147,7 @@ The acceleration signals were converted into ENMO (Euclidean Norm Minus One g), 
 
 Within each series, the ENMO time series was divided into regular epochs. For each epoch, the mean ENMO and RMS were computed. A gradual decrease in these indicators from the beginning to the end of the series was interpreted as a sign of local muscular fatigue, potentially reflecting reduced jump height, lower impact forces at landing, or decreased movement regularity.
 
-### Hypothesis 2: The sensor's position influences the detection of muscle fatigue.###
+### Hypothesis 2: The sensor's position influences the detection of muscle fatigue.
 
 The second hypothesis concerned the influence of sensor placement on the detection of muscular fatigue.
 
