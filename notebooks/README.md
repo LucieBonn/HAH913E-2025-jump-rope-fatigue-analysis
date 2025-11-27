@@ -1,0 +1,1 @@
+This folder contains the different experiments we carried out during the development of the project. It serves as a record of our various code iterations. The final, stable version of the code is located in the repository’s main branch, not in this folder.
