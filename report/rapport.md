@@ -219,10 +219,16 @@ These findings support the idea that sensor placement strongly influences the ab
 ### 7- Bibliographie
 
 Bakrania K, Yates T, Rowlands AV, Esliger DW, Bunnewell S, Sanders J, Davies M, Khunti K, Edwardson CL (2016) Intensity Thresholds on Raw Acceleration Data: Euclidean Norm Minus One (ENMO) and Mean Amplitude Deviation (MAD) Approaches. PLoS One 11:e0164045. 
+
 CABARKAPA DV, FRY AC, CABARKAPA D, PARRA ME, HERMES MJ (2022) Impact of accelerometer placement on assessment of vertical jump performance  parameters. JPES 22. 
+
 Flynn JM, Holmes JD, Andrews DM (2004) The effect of localized leg muscle fatigue on tibial impact acceleration. Clinical Biomechanics 19:726–732. 
+
 Marotta L, Scheltinga BL, Middelaar R van, Bramer WM, Beijnum B-JF van, Reenalda J, Buurke JH, Marotta L, Scheltinga BL, Middelaar R van, Bramer WM, Beijnum B-JF van, Reenalda J, Buurke JH (2022) Accelerometer-Based Identification of Fatigue in the Lower Limbs during Cyclical Physical Exercise: A Systematic Review. Sensors 22 Available at: https://www.mdpi.com/1424-8220/22/8/3008 [Accessed November 29, 2025]. 
-Sandrey MA, Chang Y-J, McCrory JL (2020) The Effect of Fatigue on Leg Muscle Activation and Tibial Acceleration During a Jumping Task. Journal of Sport Rehabilitation 29:1093–1099.
+
+Sandrey MA, Chang Y-J, McCrory JL (2020) The Effect of Fatigue on Leg Muscle Activation and Tibial Acceleration During a Jumping Task. Journal of Sport Rehabilitation 29:1093–1099. 
+
+
 
 
 
