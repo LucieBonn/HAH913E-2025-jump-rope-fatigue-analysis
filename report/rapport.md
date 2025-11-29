@@ -1,4 +1,4 @@
-﻿# Accelerometer-based measurement to quantify muscle fatigue
+# Accelerometer-based measurement to quantify muscle fatigue
 
 **Authors :** Mahoua KONE, Lucie BONNOT, Loubna EL FARESSI, Bomane PEHE 
 **Date :** November 10, 2025  
@@ -170,7 +170,6 @@ Thus, we produced three separate figures: one for Series 1, one for Series 2, an
 
 
 
-
 ### 4-3- Boxplot comparison of series 1–3 between ankle and wrist
 These three graphs show, for Series 1, 2 and 3 of Trial 2, a comparison of the movements measured at the ankle and at the wrist using boxplots. For each series, the left panel displays the distribution of ENMO values (movement intensity) for both sensor locations, and the right panel shows the distribution of MAD values (signal variability). The boxplots summarize the entire recording: they indicate the overall activity level (position of the median), the spread of values over time (height of the box and length of the whiskers), and the presence of particularly marked movement episodes (extreme points).
 These figures therefore make it possible to visualise how movement intensity and variability are distributed between the ankle and the wrist for each series.
@@ -193,6 +192,7 @@ In Series 2 (Figure 7), the difference between ankle and wrist is more pronounce
 
 In contrast with the previous series, in Series 3 the pattern clearly shifts in favour of the wrist. In the ENMO boxplots (Figure 8), wrist values are higher: the median is clearly above that of the ankle, the box is wider, and the column of extreme points extends to much larger values. The ankle, by contrast, remains concentrated around low ENMO values, with few very intense episodes. MAD shows a similar pattern: both the spread and the number of extreme values are greater at the wrist, whereas the ankle displays a more compact distribution centred on low to moderate levels. Taken together, these results suggest that in this condition the strongest and most irregular movements are mainly produced by the upper limb (arm swings, manipulations, trunk movements driving the wrist), while the lower limbs remain relatively stable or follow a more regular movement pattern.
 Overall, the three figures show that the relative contribution of the ankle and the wrist to the measured activity varies across series. In Series 1 and 2, ENMO and MAD values are higher at the ankle, indicating a predominance of lower-limb movements. In contrast, in Series 3 these indices are higher at the wrist, reflecting a greater involvement of the upper limb in the activity.
+
 
 
 
@@ -223,4 +223,5 @@ CABARKAPA DV, FRY AC, CABARKAPA D, PARRA ME, HERMES MJ (2022) Impact of accelero
 Flynn JM, Holmes JD, Andrews DM (2004) The effect of localized leg muscle fatigue on tibial impact acceleration. Clinical Biomechanics 19:726–732. 
 Marotta L, Scheltinga BL, Middelaar R van, Bramer WM, Beijnum B-JF van, Reenalda J, Buurke JH, Marotta L, Scheltinga BL, Middelaar R van, Bramer WM, Beijnum B-JF van, Reenalda J, Buurke JH (2022) Accelerometer-Based Identification of Fatigue in the Lower Limbs during Cyclical Physical Exercise: A Systematic Review. Sensors 22 Available at: https://www.mdpi.com/1424-8220/22/8/3008 [Accessed November 29, 2025]. 
 Sandrey MA, Chang Y-J, McCrory JL (2020) The Effect of Fatigue on Leg Muscle Activation and Tibial Acceleration During a Jumping Task. Journal of Sport Rehabilitation 29:1093–1099.
+
 
