@@ -1,4 +1,4 @@
-# Accelerometer-based measurement to quantify muscle fatigue
+﻿# Accelerometer-based measurement to quantify muscle fatigue
 
 **Authors :** Mahoua KONE, Lucie BONNOT, Loubna EL FARESSI, Bomane PEHE 
 **Date :** November 10, 2025  
@@ -174,19 +174,19 @@ Thus, we produced three separate figures: one for Series 1, one for Series 2, an
 These three graphs show, for Series 1, 2 and 3 of Trial 2, a comparison of the movements measured at the ankle and at the wrist using boxplots. For each series, the left panel displays the distribution of ENMO values (movement intensity) for both sensor locations, and the right panel shows the distribution of MAD values (signal variability). The boxplots summarize the entire recording: they indicate the overall activity level (position of the median), the spread of values over time (height of the box and length of the whiskers), and the presence of particularly marked movement episodes (extreme points).
 These figures therefore make it possible to visualise how movement intensity and variability are distributed between the ankle and the wrist for each series.
 
-![Series 1 – trial 2 ankle vs wrist](.../data/Series1_trial2_ankle_vs_wrist.png)
+![Series 1 – trial 2 ankle vs wrist](.../resultats/Series1_trial2_ankle_vs_wrist.png)
 
 **Figure 6: Comparison of ENMO and MAD distributions between the ankle and the wrist in Series 1**
 
 In Series 1, the graphs show ENMO levels (Figure 6) that are overall similar at the ankle and the wrist, suggesting a comparable average movement intensity at both locations. However, the upper part of the ankle boxplot extends higher and contains more extreme values, indicating that the most intense episodes of the trial (sudden movements, impacts, rapid accelerations) occur more frequently or more markedly at the ankle. For MAD, a slightly greater spread is also observed at the ankle, reflecting a signal that is somewhat more unstable and variable over time than at the wrist. In this first condition, the lower limb therefore appears to be slightly more solicited than the upper limb, while the overall activity profile remains relatively balanced between the two sensors.
 
-![Series 2 – trial 2 ankle vs wrist](.../data/Series2_trial2_ankle_vs_wrist.png)
+![Series 2 – trial 2 ankle vs wrist](.../resultats/Series2_trial2_ankle_vs_wrist.png)
 
 **Figure 7: Comparison of ENMO and MAD distributions between the ankle and the wrist in Series 2**
 
 In Series 2 (Figure 7), the difference between ankle and wrist is more pronounced than in Series 1. In the ENMO boxplots, the medians are still relatively close, but the ankle box is slightly shifted towards higher values and, more importantly, the ankle shows a much taller column of extreme points than the wrist. This indicates that, even if the average movement intensity is comparable, the most intense movement episodes occur more frequently and more markedly at the ankle. A similar pattern appears for MAD: both the median and the spread are higher for the ankle, with more extreme values than at the wrist. This reflects greater variability in the ankle signal, meaning that accelerations are both stronger and more irregular over time. This profile is consistent with a situation in which the legs produce most of the mechanical work (for example during fast locomotion or frequent changes of pace), while the wrist mainly follows the movement and remains less heavily loaded.
 
-![Series 3 – trial 2 ankle vs wrist](.../data/Series3_trial2_ankle_vs_wrist.png)
+![Series 3 – trial 2 ankle vs wrist](.../resultats/Series3_trial2_ankle_vs_wrist.png)
 
 **Figure 8: Comparison of ENMO and MAD distributions between the ankle and the wrist in Series 3**
 
