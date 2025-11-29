@@ -1,4 +1,3 @@
-﻿
 # Accelerometer-based measurement to quantify muscle fatigue
 
 **Authors :** Mahoua KONE, Lucie BONNOT, Loubna EL FARESSI, Bomane PEHE 
