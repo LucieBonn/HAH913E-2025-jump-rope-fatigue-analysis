@@ -170,6 +170,12 @@ Thus, we produced three separate figures: one for Series 1, one for Series 2, an
 
 
 
+
+
+
+
+
+
 ### 4-3- Boxplot comparison of series 1–3 between ankle and wrist
 These three graphs show, for Series 1, 2 and 3 of Trial 2, a comparison of the movements measured at the ankle and at the wrist using boxplots. For each series, the left panel displays the distribution of ENMO values (movement intensity) for both sensor locations, and the right panel shows the distribution of MAD values (signal variability). The boxplots summarize the entire recording: they indicate the overall activity level (position of the median), the spread of values over time (height of the box and length of the whiskers), and the presence of particularly marked movement episodes (extreme points).
 These figures therefore make it possible to visualise how movement intensity and variability are distributed between the ankle and the wrist for each series.
@@ -209,7 +215,7 @@ Overall, the three figures show that the relative contribution of the ankle and 
 
 
 
-In the present experiment, our results are consistent with these findings. At the ankle, ENMO and MAD clearly decrease across the three series and the highest values become rarer, which is compatible with a progressive loss of lower-limb power during the jump rope task. At the wrist, by contrast, ENMO and MAD remain more stable and generally lower in Series 1 and 2, indicating that this sensor mainly reflects rope rotation rather than the decline in leg performance. Only in Series 3 do the wrist values become relatively higher, not because the upper limb is more fatigued, but because ankle propulsion has dropped so much that wrist movements dominate the remaining signal. Overall, this supports the idea that a sensor placed close to the propulsive segments (ankle) is more sensitive to fatigue than one placed on the upper limb (wrist).
+Thus, even without looking at the detailed results, all of these references confirm that the protocol used in this study is based on sound methodological choices and is in line with the current state of knowledge on the use of accelerometry to study muscle fatigue. In the present experiment, our results are consistent with these findings. At the ankle, ENMO and MAD clearly decrease across the three series and the highest values become rarer, which is compatible with a progressive loss of lower-limb power during the jump rope task. At the wrist, by contrast, ENMO and MAD remain more stable and generally lower in Series 1 and 2, indicating that this sensor mainly reflects rope rotation rather than the decline in leg performance. Only in Series 3 do the wrist values become relatively higher, not because the upper limb is more fatigued, but because ankle propulsion has dropped so much that wrist movements dominate the remaining signal. Overall, this supports the idea that a sensor placed close to the propulsive segments (ankle) is more sensitive to fatigue than one placed on the upper limb (wrist) (Weber et al., 2024).
 
 ### 6- Conclusion
 
@@ -227,6 +233,12 @@ Flynn JM, Holmes JD, Andrews DM (2004) The effect of localized leg muscle fatigu
 Marotta L, Scheltinga BL, Middelaar R van, Bramer WM, Beijnum B-JF van, Reenalda J, Buurke JH, Marotta L, Scheltinga BL, Middelaar R van, Bramer WM, Beijnum B-JF van, Reenalda J, Buurke JH (2022) Accelerometer-Based Identification of Fatigue in the Lower Limbs during Cyclical Physical Exercise: A Systematic Review. Sensors 22 Available at: https://www.mdpi.com/1424-8220/22/8/3008 [Accessed November 29, 2025]. 
 
 Sandrey MA, Chang Y-J, McCrory JL (2020) The Effect of Fatigue on Leg Muscle Activation and Tibial Acceleration During a Jumping Task. Journal of Sport Rehabilitation 29:1093–1099. 
+
+Weber A et al. (2024) Large-scale assessment of physical activity in a population using high-resolution hip-worn accelerometry: the German National Cohort (NAKO). Sci Rep 14:7927. 
+
+(PDF) Large-scale assessment of physical activity in a population using high-resolution hip-worn accelerometry: the German National Cohort (NAKO)Weber A et al. (2024) Large-scale assessment of physical activity in a population using high-resolution hip-worn accelerometry: the German National Cohort (NAKO). Sci Rep 14:7927. 
+
+
 
 
 
